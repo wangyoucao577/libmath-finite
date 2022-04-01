@@ -1,6 +1,6 @@
 
-#ifndef _LIB_MATH_FINITE_
-#define _LIB_MATH_FINITE_
+#ifndef LIB_MATH_FINITE_
+#define LIB_MATH_FINITE_
 
 #include <math.h>
 
@@ -26,5 +26,5 @@ float __powf_finite(float x, float y) { return powf(x, y); }
 }
 #endif
 
-#endif
+#endif  // LIB_MATH_FINITE_
 
