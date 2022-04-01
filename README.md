@@ -1,11 +1,10 @@
 # libmath-finite     
-`libmath-finite` intends to solve the `xx_finite` symbols missed problem due to `glibc` upgrade. It generally happens when distribute your pre-built binray(`.a/.so/exe`) from `glibc<2.31` build enviornment to `glibc>=2.31` systems, such as from `Debian 10` to `Debian 11`, or `Ubuntu18.04` to `Ubuntu20.04`. [Math changes in glibc 2.31](https://sourceware.org/pipermail/libc-alpha/2020-May/113773.html) also discusses the problem.          
-It's a very simple library, which only wraps functions of the standards math library, i.e., `libm`. Feel free to build `.a/.so` for integration, or just simply copy the sources to your project.      
+**libmath-finite** intends to solve the `xx_finite` symbols missed problem due to `glibc` upgrade. It generally happens when distribute your pre-built binray(`.a/.so/executable`) from `glibc<2.31` build enviornment to `glibc>=2.31` systems, such as from `Debian 10` to `Debian 11`, or from `Ubuntu18.04` to `Ubuntu20.04`. [Math changes in glibc 2.31](https://sourceware.org/pipermail/libc-alpha/2020-May/113773.html) also discusses the problem.          
+It's a very simple library, which only wraps functions of the standards math library `libm`. **Many thanks to **Étienne** who proposes the idea in [Link errors with -ffast-math (-ffinite-math-only) and glibc 2.31](https://stackoverflow.com/questions/63261220/link-errors-with-ffast-math-ffinite-math-only-and-glibc-2-31)**. Feel free to build `.a/.so` for integration, or just simply copy the sources to your project.      
 
 
 ## The problem
-Someday when I try to build a project on my new development environment that runs `Debian11`, a lot of `undefined reference` errors occurred, which leads to symbols missed. At a glance I find that all the missed symbols have `_finite` suffix and looks like math functions, for example, `undefined reference to __pow_finite`.    
-But why?    
+Someday when I try to build a project on my new computer that runs `Debian11`, a lot of `undefined reference` errors occurred, which leads to symbols missed. At a glance I find that all the missed symbols have `_finite` suffix and looks like math functions, for example, `undefined reference to __pow_finite`. But why?    
 
 ## Reproduction
 Let's try to reproduce it step-by-step.    
