@@ -149,7 +149,7 @@ $ nm -D /lib/x86_64-linux-gnu/libm-2.28.so | grep __pow_finite
 
 The `libm-2.28` on `Debian 10` has a default `__pow_finite`, so that `app` and link correctly. But `libm-2.31` on `Debian 11` only has an `__pow_finite@GLIBC_2.15` for backward compatibility, which can NOT be linked by default. [How the GNU C Library handles backward compatibility](https://developers.redhat.com/blog/2019/08/01/how-the-gnu-c-library-handles-backward-compatibility) explains the `glibc` backward compatibility handling.        
 
-After some research, [Proposal: Remove or reduce math-finite.h](https://sourceware.org/legacy-ml/libc-alpha/2019-03/msg00395.html) tells us that **the *_finite names are just aliases of the normal name and so the asm attribute isn't accompishing anything**, and the [sourceware.org - glibc.git - commit: remove math-finite.h redirections for math functions](https://sourceware.org/git/gitweb.cgi?p=glibc.git;h=7bdb921d70bf9f93948e2e311fef9ef439314e41) removes them completely. It's actually an ABI change of `glibc` libraries, but doesn't properly handled.    
+After some research, [Proposal: Remove or reduce math-finite.h](https://sourceware.org/legacy-ml/libc-alpha/2019-03/msg00395.html) tells us that **the _finite names are just aliases of the normal name and so the asm attribute isn't accompishing anything**, and the [sourceware.org - glibc.git - commit: remove math-finite.h redirections for math functions](https://sourceware.org/git/gitweb.cgi?p=glibc.git;h=7bdb921d70bf9f93948e2e311fef9ef439314e41) removes them completely. It's actually an ABI change of `glibc` libraries, but doesn't properly handled.    
 
 ## How to solve    
 Now we know why it happens, and there're several ways to solve it.      
