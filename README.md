@@ -34,6 +34,7 @@ $ gcc -shared -fPIC -o libmath-finite.so libmath-finite.o -lm
 - [GCC - Options That Control Optimization](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html)
 - [How the GNU C Library handles backward compatibility](https://developers.redhat.com/blog/2019/08/01/how-the-gnu-c-library-handles-backward-compatibility)    
 - [Undefined reference to `__xxx_finite` - why and how?](./doc/undefined_reference_to__xxx_finite__why_and_how.md)    
-
+- [Undefined reference to `__xxx_finite` - why and how? - medium.com](https://medium.com/@wangyoucao577/undefined-reference-to-xxx-finite-why-and-how-84f52766f1b4)
+- [Undefined reference to `__xxx_finite` - why and how? - github.io](https://wangyoucao577.github.io/en/2022/04/03/undefined_reference_to__xxx_finite__why_and_how.html)
 
 
