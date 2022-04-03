@@ -1,5 +1,5 @@
 # libmath-finite     
-**libmath-finite** intends to solve the `xx_finite` symbols missed problem due to `glibc` upgrade. It generally happens when distribute your pre-built binray(`.a/.so/executable`) from `glibc<2.31` build enviornment to `glibc>=2.31` systems, such as `Debian 10 -> Debian 11`, or `Ubuntu18.04 -> Ubuntu20.04`. [Math changes in glibc 2.31](https://sourceware.org/pipermail/libc-alpha/2020-May/113773.html) also discusses the problem.          
+**libmath-finite** intends to solve the `__xxx_finite` symbols missed problem due to `glibc` upgrade. It generally happens when distribute your pre-built binray(`.a/.so/executable`) from `glibc<2.31` build enviornment to `glibc>=2.31` systems, such as `Debian 10 -> Debian 11`, or `Ubuntu18.04 -> Ubuntu20.04`. [Math changes in glibc 2.31](https://sourceware.org/pipermail/libc-alpha/2020-May/113773.html) also discusses the problem.          
 It's a very simple library, which only wraps functions of the standard math library `libm`. **Many thanks to **Étienne** who proposes the idea in [Link errors with -ffast-math (-ffinite-math-only) and glibc 2.31](https://stackoverflow.com/questions/63261220/link-errors-with-ffast-math-ffinite-math-only-and-glibc-2-31)**.    
 
 ## Why need it
