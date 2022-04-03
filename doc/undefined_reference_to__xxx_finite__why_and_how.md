@@ -1,5 +1,7 @@
 # Undefined reference to `__xxx_finite` - why and how?
 This article explains the **undefined reference to `__xxx_finite`** problem, what is it, why it happens, and how to solve it.     
+All the sources codes in this article has been placed in [wangyoucao577/libmath-finite](https://github.com/wangyoucao577/libmath-finite), which is a small library intends to solve this problem. Feel free to try it by yourself, file issue in the project if any question.            
+
 
 ## The problem
 Someday when I try to build a project on my new computer that runs `Debian 11`, a lot of `undefined reference` errors occurred, which leads to symbols missed. At a first glance I find that all the missed symbols have `_finite` suffix and looks like math functions, for example, `undefined reference to __pow_finite`. But why?    
@@ -222,8 +224,7 @@ foo(2.0, 5.0) = 32.000000
 Same with **Way2**, the `libmath-finite.so` should be linked correctly. On the other hand, the `libmath-finite.so` should be distributed with your program together, and need to be find by your program when run. In this example, `export LD_LIBRARY_PATH=$(pwd)/../..` is helpful to make `app.out` find the `libmath-finite.so`.     
 
 ## Conclusion    
-This problem is due to an ABI change of `glibc` between `2.30` and `2.31`. You may fix it by various ways described above.     
-All the sources codes in this article has been placed in [wangyoucao577/libmath-finite](https://github.com/wangyoucao577/libmath-finite), feel free to try it by yourself, file issue in the project if any question. Thanks!           
+This problem is due to an ABI change of `glibc` between `2.30` and `2.31`. You may fix it by various ways described above. Thanks!      
 
 
 ## References
